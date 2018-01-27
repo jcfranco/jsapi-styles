@@ -9,21 +9,22 @@ module.exports = grunt => {
   grunt.initConfig({
 
     browserSync: {
-      bsFiles: {
-        src: ["dist/**/*"]
-      },
       options: {
         server: {
           baseDir: "./"
         },
-        startPath: "tester/",
+        startPath: "preview/",
         watchTask: true
+      },
+
+      bsFiles: {
+        src: "dist/**/*"
       }
     },
 
     clean: {
       dist: {
-        src: ["dist/"]
+        src: "dist/"
       }
     },
 
@@ -34,55 +35,30 @@ module.exports = grunt => {
           // theme dependencies
           {
             expand: true,
-            cwd: "sass",
+            cwd: "sass/",
             src: ["base/fonts/**/*.*", "!base/fonts/**/*.scss"],
             dest: "dist/"
           },
           {
             expand: true,
-            cwd: "sass",
-            src: ["base/icons/fonts/**/*.*"],
+            cwd: "sass/",
+            src: "base/icons/fonts/**/*.*",
             dest: "dist/"
           },
           {
             expand: true,
-            cwd: "sass",
-            src: ["base/images/**/*.*"],
+            cwd: "sass/",
+            src: "base/images/**/*.*",
             dest: "dist/"
           }
         ]
       },
 
       setup: {
-        files: [
-
-          // theme base
-          {
-            expand: true,
-            cwd: "node_modules/arcgis-js-api/themes",
-            src: ["base/**/*.*"],
-            dest: "sass/"
-          },
-
-          // starter theme
-          {
-            expand: true,
-            cwd: "node_modules/arcgis-js-api/themes/light",
-            src: ["main.scss"],
-            dest: "sass/my-theme/"
-          },
-
-          // theme examples
-          {
-            expand: true,
-            cwd: "node_modules/arcgis-js-api/themes",
-            src: ["**/main.scss", "!base/*.*"],
-            dest: "sass/examples/"
-          }
-        ],
         options: {
 
-          // move in `my-theme` file config if https://github.com/gruntjs/grunt-contrib-copy/issues/299 is fixed
+          // move to `my-theme` file config when
+          // https://github.com/gruntjs/grunt-contrib-copy/issues/299 is fixed
           process: (content, srcpath, destpath) => {
             if (destpath.indexOf("/my-theme/") === -1) {
               return content;
@@ -94,8 +70,37 @@ module.exports = grunt => {
             return content.replace(defaultThemeHeader, customThemeHeader);
           },
 
-          noProcess: ["**/*.{ttf,woff}"]
-        }
+          // prevents binary file corruption during copy
+          // see https://github.com/gruntjs/grunt-contrib-copy/issues/64
+          noProcess: "**/*.{ttf,woff}"
+        },
+
+        files: [
+
+          // theme base
+          {
+            expand: true,
+            cwd: "node_modules/arcgis-js-api/themes",
+            src: "base/**/*.*",
+            dest: "sass/"
+          },
+
+          // starter theme
+          {
+            expand: true,
+            cwd: "node_modules/arcgis-js-api/themes/light",
+            src: "main.scss",
+            dest: "sass/my-theme/"
+          },
+
+          // theme examples
+          {
+            expand: true,
+            cwd: "node_modules/arcgis-js-api/themes",
+            src: ["**/main.scss", "!base/*.*"],
+            dest: "sass/examples/"
+          }
+        ]
       }
     },
 
@@ -103,6 +108,7 @@ module.exports = grunt => {
       options: {
         outputStyle: "compressed"
       },
+
       dist: {
         files: [
           {
@@ -119,15 +125,16 @@ module.exports = grunt => {
     watch: {
       sass: {
         files: ["sass/**/*.scss", "!sass/examples/**"],
-        tasks: ["dist"]
+        tasks: "build"
       },
     }
 
   });
 
+
   grunt.registerTask("setup", ["copy:setup"]);
-  grunt.registerTask("dev", ["tester", "watch:sass"]);
-  grunt.registerTask("dist", ["clean", "sass", "copy:dist"]);
-  grunt.registerTask("tester", ["browserSync"]);
+  grunt.registerTask("dev", ["preview", "watch:sass"]);
+  grunt.registerTask("build", ["clean", "sass", "copy:dist"]);
+  grunt.registerTask("preview", ["browserSync"]);
 
 };
