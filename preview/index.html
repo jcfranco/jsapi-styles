@@ -19,19 +19,30 @@
   <script>
     require([
       "esri/Map",
-      "esri/views/MapView",
+      "esri/widgets/Search",
+      "esri/views/SceneView",
       "dojo/domReady!"
-    ], function(Map, MapView) {
+    ], function(Map, Search, SceneView) {
 
       var map = new Map({
         basemap: "streets"
       });
 
-      var view = new MapView({
+      var view = new SceneView({
         container: "viewDiv",
         map: map,
-        zoom: 4,
-        center: [15, 65] // longitude, latitude
+        zoom: 18,
+        center: [-117.1870380, 34.0573220]
+      });
+
+      var search = new Search({
+        view: view
+      });
+
+      view.ui.add(search, "top-right");
+
+      view.when(function() {
+        search.search("El Paso, TX");
       });
 
     });
