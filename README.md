@@ -9,10 +9,9 @@ By working with [Sass](http://sass-lang.com), you no longer need to figure out C
 * [node/npm](https://nodejs.org/)
 * Working knowledge of Sass is highly recommended
 
-## Scripts
+## Setup
 
-* `npm install` - installs dependencies and lays out the Sass files for you to customize.
-* `npm run dist` - compiles all sass files and produces a distributable theme.
+Running `npm install` sets up the development environment, which will lay out the Sass theme files and launch a preview page that will automatically reload when making changes.
 
 ## Structure
 
@@ -80,10 +79,4 @@ $include_Tags             : false;
 
 // import theme base
 @import "../base/core";
-```
-
-When your theme is ready to be consumed, you can create a distributable theme by running `npm run dist`. This will compile your theme and create a distributable folder (`dist`). You will need to host this theme and import it into your application.
-
-```html
-<link rel="stylesheet" href="<my-web-server>/dist/my-theme/main.css">
 ```
