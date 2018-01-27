@@ -1,11 +1,26 @@
 module.exports = grunt => {
 
+  grunt.loadNpmTasks("grunt-browser-sync");
   grunt.loadNpmTasks("grunt-contrib-copy");
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-sass");
 
   grunt.initConfig({
+
+    browserSync: {
+      bsFiles: {
+        src: ["dist/**/*"]
+      },
+      options: {
+        server: {
+          baseDir: "./"
+        },
+        startPath: "tester/",
+        watchTask: true
+      }
+    },
+
     clean: {
       dist: {
         src: ["dist/"]
@@ -103,17 +118,16 @@ module.exports = grunt => {
 
     watch: {
       sass: {
-        options: {
-          spawn: false
-        },
         files: ["sass/**/*.scss", "!sass/examples/**"],
-        tasks: ["sass"]
+        tasks: ["dist"]
       },
     }
 
   });
 
   grunt.registerTask("setup", ["copy:setup"]);
+  grunt.registerTask("dev", ["tester", "watch:sass"]);
   grunt.registerTask("dist", ["clean", "sass", "copy:dist"]);
+  grunt.registerTask("tester", ["browserSync"]);
 
 };
