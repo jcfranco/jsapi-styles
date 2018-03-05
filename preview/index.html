@@ -20,19 +20,19 @@
     require([
       "esri/Map",
       "esri/widgets/Search",
-      "esri/views/SceneView",
+      "esri/views/MapView",
       "dojo/domReady!"
-    ], function(Map, Search, SceneView) {
+    ], function(Map, Search, MapView) {
 
       var map = new Map({
         basemap: "streets"
       });
 
-      var view = new SceneView({
+      var view = new MapView({
         container: "viewDiv",
         map: map,
-        zoom: 18,
-        center: [-117.1870380, 34.0573220]
+        zoom: 13,
+        center: [-117.1825899999999, 34.055411433014434]
       });
 
       var search = new Search({
@@ -42,7 +42,7 @@
       view.ui.add(search, "top-right");
 
       view.when(function() {
-        search.search("El Paso, TX");
+        search.search("Redlands, CA");
       });
 
     });
