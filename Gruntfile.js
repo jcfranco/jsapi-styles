@@ -18,7 +18,7 @@ module.exports = grunt => {
       },
 
       bsFiles: {
-        src: "dist/**/*"
+        src: "dist/**/*.css"
       }
     },
 
