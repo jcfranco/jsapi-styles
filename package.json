@@ -7,7 +7,7 @@
   },
   "author": "esri",
   "devDependencies": {
-    "arcgis-js-api": "^4.6.1"
+    "arcgis-js-api": "4.8.0"
   },
   "dependencies": {
     "grunt": "~1.0.2",
