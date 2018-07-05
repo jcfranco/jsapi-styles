@@ -7,7 +7,7 @@
   },
   "author": "esri",
   "devDependencies": {
-    "arcgis-js-api": "^4.6.1"
+    "arcgis-js-api": "4.8.0"
   },
   "dependencies": {
     "grunt": "~1.0.2",
@@ -15,6 +15,7 @@
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "~2.1.0"
+    "grunt-sass": "~2.1.0",
+    "node-sass": "~4.9.0"
   }
 }
