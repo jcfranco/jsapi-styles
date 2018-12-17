@@ -102,7 +102,7 @@ The following lists the main changes that may affect your code:
   * All font sizes are based on `$base-font-size`
     * e.g. `$font-size__h1: round($base-font-size * 1.428)`
 * Font weights
-  * `$text_weight_normal` is not simply `$font-weight`
+  * `$text_weight_normal` is now simply `$font-weight`
   * Use `$font-weight__heading` for headings ("header" was incorrectly used before)
   * For a bold font weight not related to a heading, use `$font-weight__bold`
 
