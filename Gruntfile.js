@@ -125,8 +125,11 @@ module.exports = grunt => {
     watch: {
       sass: {
         files: ["sass/**/*.scss", "!sass/examples/**"],
-        tasks: "build"
-      },
+        tasks: "build",
+        options: {
+          interrupt: true
+        }
+      }
     }
 
   });
