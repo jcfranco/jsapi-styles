@@ -1,10 +1,6 @@
 module.exports = grunt => {
 
-  grunt.loadNpmTasks("grunt-browser-sync");
-  grunt.loadNpmTasks("grunt-contrib-copy");
-  grunt.loadNpmTasks("grunt-contrib-clean");
-  grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks("grunt-sass");
+  require("load-grunt-tasks")(grunt);
 
   grunt.initConfig({
 
@@ -106,6 +102,7 @@ module.exports = grunt => {
 
     sass: {
       options: {
+        implementation: require("node-sass"),
         outputStyle: "compressed"
       },
 
