@@ -3,7 +3,8 @@
   "version": "4.13.0",
   "description": "Utility for easier ArcGIS API 4x for JavaScript theme customization",
   "scripts": {
-    "postinstall": "grunt setup && grunt dev"
+    "postinstall": "grunt setup && grunt dev",
+    "dev": "grunt dev"
   },
   "author": "esri",
   "devDependencies": {
