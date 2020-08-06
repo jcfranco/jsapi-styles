@@ -1,6 +1,6 @@
 {
   "name": "jsapi-styles",
-  "version": "4.15.0",
+  "version": "4.16.0",
   "description": "Utility for easier ArcGIS API 4x for JavaScript theme customization",
   "scripts": {
     "deps:update": "npx updtr && git add package*.json && git commit -q -m \"build(deps): bump versions\"",
