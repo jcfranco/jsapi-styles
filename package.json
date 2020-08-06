@@ -1,6 +1,6 @@
 {
   "name": "jsapi-styles",
-  "version": "4.14.0",
+  "version": "4.15.0",
   "description": "Utility for easier ArcGIS API 4x for JavaScript theme customization",
   "scripts": {
     "deps:update": "npx updtr && git add package*.json && git commit -q -m \"build(deps): bump versions\"",
@@ -13,17 +13,17 @@
   "private": true,
   "author": "esri",
   "devDependencies": {
-    "arcgis-js-api": "4.14.0"
+    "arcgis-js-api": "4.15.3"
   },
   "dependencies": {
-    "browser-sync": "2.26.7",
-    "grunt": "1.0.4",
+    "browser-sync": "2.26.12",
+    "grunt": "1.2.1",
     "grunt-browser-sync": "2.2.0",
     "grunt-contrib-clean": "2.0.0",
     "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-watch": "1.1.0",
     "grunt-sass": "3.1.0",
     "load-grunt-tasks": "5.1.0",
-    "node-sass": "4.13.0"
+    "node-sass": "4.14.1"
   }
 }
