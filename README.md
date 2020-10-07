@@ -12,13 +12,8 @@ By working with [Sass](http://sass-lang.com), you no longer need to figure out C
 ## Setup
 
 * `npm install`
-* `npm start` - this sets up the development environment, which will lay out the Sass theme files and launch a preview page that will automatically reload when making changes.
-
-## Developing
-
-Running `npm run dev` you can run Grunt script for automatic build and Browsersync to get the testing app to your browser.
-
-> Run `npm run postinstall` only once. Next time it will rewrite your modified style file with the default one.
+* `npm run setup`- this sets up the development environment, which will lay out the Sass theme files. Be careful, running this command again reset your `my-theme/main.scss` file.
+* `npm start` - this launch a preview page that will automatically reload when making changes.
 
 ## Structure
 
