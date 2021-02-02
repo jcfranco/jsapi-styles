@@ -1,6 +1,6 @@
 {
   "name": "jsapi-styles",
-  "version": "4.17.0",
+  "version": "4.18.0",
   "description": "Utility for easier ArcGIS API 4x for JavaScript theme customization",
   "scripts": {
     "deps:update": "npx updtr && git add package*.json && git commit -q -m \"build(deps): bump versions\"",
@@ -13,7 +13,7 @@
   "private": true,
   "author": "esri",
   "devDependencies": {
-    "arcgis-js-api": "4.17.2"
+    "arcgis-js-api": "4.18.1"
   },
   "dependencies": {
     "browser-sync": "2.26.14",

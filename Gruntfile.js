@@ -76,7 +76,7 @@ module.exports = grunt => {
           // theme base
           {
             expand: true,
-            cwd: "node_modules/arcgis-js-api/themes",
+            cwd: "node_modules/arcgis-js-api/assets/esri/themes",
             src: "base/**/*.*",
             dest: "sass/"
           },
@@ -84,7 +84,7 @@ module.exports = grunt => {
           // starter theme
           {
             expand: true,
-            cwd: "node_modules/arcgis-js-api/themes/light",
+            cwd: "node_modules/arcgis-js-api/assets/esri/themes/light",
             src: "main.scss",
             dest: "sass/my-theme/"
           },
@@ -92,7 +92,7 @@ module.exports = grunt => {
           // theme examples
           {
             expand: true,
-            cwd: "node_modules/arcgis-js-api/themes",
+            cwd: "node_modules/arcgis-js-api/assets/esri/themes",
             src: ["**/main.scss", "!base/*.*"],
             dest: "sass/examples/"
           }
