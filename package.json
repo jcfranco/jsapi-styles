@@ -13,17 +13,17 @@
   "private": true,
   "author": "esri",
   "devDependencies": {
-    "arcgis-js-api": "4.16.2"
+    "arcgis-js-api": "4.18.1"
   },
   "dependencies": {
-    "browser-sync": "2.26.12",
-    "grunt": "1.2.1",
+    "browser-sync": "2.26.14",
+    "grunt": "1.3.0",
     "grunt-browser-sync": "2.2.0",
     "grunt-contrib-clean": "2.0.0",
     "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-watch": "1.1.0",
     "grunt-sass": "3.1.0",
     "load-grunt-tasks": "5.1.0",
-    "node-sass": "4.14.1"
+    "node-sass": "5.0.0"
   }
 }
