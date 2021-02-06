@@ -1,6 +1,6 @@
 .idea/
 dist/
 node_modules/
-sass/
+.jsapi-styles/
 .DS_Store
 *.iml
