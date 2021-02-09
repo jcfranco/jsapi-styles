@@ -12,7 +12,8 @@ By working with [Sass](http://sass-lang.com), you no longer need to figure out C
 ## Setup
 
 * `npm install`
-* `npm start` - this sets up the development environment, which will lay out the Sass theme files and launch a preview page that will automatically reload when making changes.
+* `npm run setup`- sets up the development environment, which will lay out the Sass theme files. Be careful, this command will override any changes to `my-theme/main.scss`.
+* `npm start` - launches a preview page that will automatically reload when making changes.
 
 ## Structure
 

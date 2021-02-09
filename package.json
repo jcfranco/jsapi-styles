@@ -4,7 +4,8 @@
   "description": "Utility for easier ArcGIS API 4x for JavaScript theme customization",
   "scripts": {
     "deps:update": "npx updtr && git add package*.json && git commit -q -m \"build(deps): bump versions\"",
-    "start": "grunt setup && grunt dev"
+    "setup": "grunt setup",
+    "start": "grunt dev"
   },
   "repository": {
     "type": "git",
