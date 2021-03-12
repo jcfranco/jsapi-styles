@@ -1,3 +1,7 @@
+# This repository has been deprecated and merged into [@esri/arcgis-js-cli](https://github.com/Esri/arcgis-js-cli)
+
+---
+
 # JSAPI Styles
 
 This utility makes it easier to creating your own Sass theme for [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) applications.
